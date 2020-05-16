@@ -33,9 +33,9 @@ const IndexScreen = ({ navigation }) => {
 
 IndexScreen.navigationOptions = ({ navigation }) => {
   return {
-    header: (
+    headerRight: (
       <TouchableOpacity onPress={() => navigation.navigate('Create')}>
-        <Feather name='plus' size={30} />
+        <Feather name='plus' style={styles.createPostStyle} />
       </TouchableOpacity>
     )
   };
@@ -55,6 +55,10 @@ const styles = StyleSheet.create({
   },
   icon: {
     fontSize: 24,
+  },
+  createPostStyle: {
+    fontSize: 30,
+    marginRight: 10,
   }
 });
 
