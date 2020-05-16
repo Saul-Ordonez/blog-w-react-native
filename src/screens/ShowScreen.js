@@ -18,11 +18,17 @@ const ShowScreen = ({ navigation }) => {
 
 ShowScreen.navigationOptions = ({ navigation }) => {
   return {
-    headerRight: <TouchableOpacity onPress={() => navigation.navigate('Edit')} >
-      <EvilIcons name='pencil' style={styles.editPostStyle} />
-    </TouchableOpacity>
-  }
-}
+    headerRight: (
+      <TouchableOpacity  
+        onPress={() => 
+          navigation.navigate('Edit', { id: navigation.getParam('id') })
+        } 
+      >
+        <EvilIcons name='pencil' style={styles.editPostStyle} />
+      </TouchableOpacity>
+    )
+  };
+};
 
 const styles = StyleSheet.create({
   editPostStyle: {
